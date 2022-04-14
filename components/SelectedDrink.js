@@ -15,7 +15,6 @@ https://web.archive.org/web/20210314010317/https://files.dutchbros.com/website/m
             
             <div className='flex justify-center'>
                 <div className='-mt-14 '>
-                    <img className='h-10 w-10' src={drink.image.replace("blended", "lemonade")} alt="" />
 
                     <img
                     // onError = {e => e.target.style.display = 'none'} 
