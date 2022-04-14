@@ -161,6 +161,7 @@ return (
                   cards.map( (card, index ) => {
                     return (
                       <CategoryCard
+                        key={index}
                         index={index} 
                         category={card.category}
                         description={card.description}
@@ -176,16 +177,16 @@ return (
             </div>
 
             {/* BG Icons */}
-            <div  class="-z-[1] absolute left-1 top-[60vh] h-5 w-5">
+            <div  className="-z-[1] absolute left-1 top-[60vh] h-5 w-5">
                 <img src="/images/windmill.png" alt=""/>
             </div>
-            <div  class="-z-[1] absolute left-1 top-[80vh] h-5 w-5">
+            <div  className="-z-[1] absolute left-1 top-[80vh] h-5 w-5">
                 <img src="/images/bean.png" alt=""/>
             </div>
-            <div  class="-z-[1] absolute right-1 top-[70vh] h-5 w-5">
+            <div  className="-z-[1] absolute right-1 top-[70vh] h-5 w-5">
                 <img src="/images/beans.png" alt=""/>
             </div>
-            <div  class="-z-[1] absolute right-1 top-[90vh] h-5 w-5">
+            <div  className="-z-[1] absolute right-1 top-[90vh] h-5 w-5">
                 <img src="/images/windmill.png" alt=""/>
             </div>
         </div>
