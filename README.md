@@ -1,23 +1,53 @@
-# Next.js + Tailwind CSS Example
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h1 align="center">
+  <br>
+  <a href="https://dutch-bros-drink-generator.vercel.app/"><img src="public/images/readmelogo.png" width="150" alt="Dutch Bros Drink Generator" ></a>
+  <!-- <br>
+  Bug_Tracker
+  <br> -->
+</h1>
 
-## Deploy your own
+<h4 align="center">Random drink generator for Dutch Bros Coffee.</h4>
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
 
-## How to use
+<p align="center">
+ <a href="#screenshots">Screenshots</a> •
+  <a href="#demo">Demo</a> •
+  <a href="#key-features">Key Features</a> •
+  <a href="#Built-with">Built With</a>
+</p>
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Screenshots
+![screenshot](public/images/login_screenshot.png)
+![screenshot](public/images/dashboard_screenshot.png)
+![screenshot](public/images/projects_screenshot.png)
+![screenshot](public/images/tickets_screenshot.png)
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-# or
-pnpm create next-app -- --example with-tailwindcss with-tailwindcss-app
-```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+## Demo
+
+* View [here](https://bug-tracker-tau.vercel.app/)
+
+
+## Key Features
+
+* Authentication and Demo User Account Access with NextAuth.js.
+* User Permissions.
+* Create Projects, Tickets, and Assign User Roles.
+* Post comments.
+* Upload images with Cloudinary.
+* Ticket history tracking.
+* Responsive web design.
+
+
+
+## Built With
+![screenshot](public/images/stack.png)
+
+* JavaScript
+* NextAuth.js
+* Next.js
+* Tailwind CSS
+* Vercel
+* MongoDB

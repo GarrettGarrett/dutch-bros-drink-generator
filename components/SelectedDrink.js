@@ -19,7 +19,7 @@ function SelectedDrink({drink, wayBackVisible, setWayBackVisible, newestImageVis
                    
                     className={`h-[30vh] ${wayBackVisible && !newestImageVisible ? "" : "hidden"}`}
                      src={`
-                        https://web.archive.org/web/20210314010609/https://files.dutchbros.com/website/menu/drink-images/${drink.image}`} alt="" 
+                        https://web.archive.org/web/20210314010609/https://files.dutchbros.com/website/menu/drink-images/${drink?.image}`} alt="" 
                     /> 
             
 
@@ -30,7 +30,7 @@ function SelectedDrink({drink, wayBackVisible, setWayBackVisible, newestImageVis
                     }}
                     
                     className={`h-[30vh] ${newestImageVisible ? "" : "hidden"}`}
-                    src={`https://files.dutchbros.com/website/menu/drink-images-v2/${drink.image}`} alt="" 
+                    src={`https://files.dutchbros.com/website/menu/drink-images-v2/${drink?.image}`} alt="" 
                     />
 
                     <img 
