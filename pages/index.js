@@ -58,7 +58,7 @@ export async function getServerSideProps(context) {
           objectArray.push(JSON.parse(formated))
       })
       return {
-        props: {objectArray}, // will be passed to the page component as props
+        props: {objectArray}, // will be passed to the page component as props.
       }
     }                  
 }
