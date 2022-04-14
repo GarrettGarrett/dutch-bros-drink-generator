@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+@layer base {
+    @font-face {
+      font-family: Futura-bold;
+      font-weight: 400;
+      src: url(/fonts/Futura-bold.woff) format("woff");
+    }   
+    @font-face {
+      font-family: Futura-4;
+      font-weight: 400;
+      src: url(/fonts/Futura-4.woff) format("woff");
+    }
+    /* @font-face {
+      font-family: Nanum;
+      font-weight: 400;
+      src: url(https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap) format("ttf");
+    } */
+
+    
+   
+}
