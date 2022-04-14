@@ -3,7 +3,7 @@
   <br>
   <a href="https://dutch-bros-drink-generator.vercel.app/"><img src="public/images/readmelogo.png" width="150" alt="Dutch Bros Drink Generator" ></a>
   <!-- <br>
-  Bug_Tracker
+  Drink Generator
   <br> -->
 </h1>
 
@@ -19,35 +19,26 @@
 </p>
 
 ## Screenshots
-![screenshot](public/images/login_screenshot.png)
-![screenshot](public/images/dashboard_screenshot.png)
-![screenshot](public/images/projects_screenshot.png)
-![screenshot](public/images/tickets_screenshot.png)
+![screenshot](public/images/screenshot1.png)
+
 
 
 ## Demo
 
-* View [here](https://bug-tracker-tau.vercel.app/)
+* View [here](https://dutch-bros-drink-generator.vercel.app/)
 
 
 ## Key Features
 
-* Authentication and Demo User Account Access with NextAuth.js.
-* User Permissions.
-* Create Projects, Tickets, and Assign User Roles.
-* Post comments.
-* Upload images with Cloudinary.
-* Ticket history tracking.
-* Responsive web design.
-
+* Drinks fetched with Server Side Rendering for increased initial page load speed
+* Drinks are automatically added as Dutch Bros updates their menu.
+* Select a random drink from selected categories or the entire menu.
 
 
 ## Built With
-![screenshot](public/images/stack.png)
+![screenshot](public/images/builtwith.png)
 
 * JavaScript
-* NextAuth.js
 * Next.js
 * Tailwind CSS
 * Vercel
-* MongoDB
