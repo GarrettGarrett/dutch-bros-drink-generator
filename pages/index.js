@@ -54,7 +54,10 @@ export async function getServerSideProps(context) {
       let objectArray = []
       splitArray.forEach((arr, index) => {
           let formated = addBracketsIfNEeded(arr, index, splitArray.length)
-          objectArray.push(JSON.parse(formated))
+          let formatedJson = JSON.parse(formated)
+          if (formatedJson.category != "It's All Goodies") {
+            objectArray.push(JSON.parse(formated))
+          }
       })
       return {
         props: {objectArray}, 

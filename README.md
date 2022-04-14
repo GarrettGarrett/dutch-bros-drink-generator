@@ -30,7 +30,7 @@
 
 ## Key Features
 
-* Drinks fetched with Server Side Rendering for increased initial page load speed
+* Drinks fetched with Server Side Rendering for an increased initial page load speed.
 * Drinks are automatically added as Dutch Bros updates their menu.
 * Select a random drink from selected categories or the entire menu.
 
