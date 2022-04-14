@@ -4,9 +4,9 @@ import DefaultDrink from '../components/DefaultDrink'
 import LoaderLottie from '../components/LoaderLottie'
 
 function SelectedDrink({drink, wayBackVisible, setWayBackVisible, newestImageVisible, setNewestImageVisible, imageLoading, setImageLoading}) {
-console.log("🚀 ~ file: SelectedDrink.js ~ line 6 ~ SelectedDrink ~ drink", drink)
+console.log("🚀 ~ file: SelectedDrink.js ~ line 6 ~ SelectedDrink ~ drink", drink.image.replace("blended", "lemonade").replace("frost","iced"))
 
-
+https://web.archive.org/web/20210314010317/https://files.dutchbros.com/website/menu/drink-images/Iced_Starry_Night_Lemonade.png
     
   
   return (
@@ -15,6 +15,7 @@ console.log("🚀 ~ file: SelectedDrink.js ~ line 6 ~ SelectedDrink ~ drink", dr
             
             <div className='flex justify-center'>
                 <div className='-mt-14 '>
+                    <img className='h-10 w-10' src={drink.image.replace("blended", "lemonade")} alt="" />
 
                     <img
                     // onError = {e => e.target.style.display = 'none'} 
@@ -24,9 +25,9 @@ console.log("🚀 ~ file: SelectedDrink.js ~ line 6 ~ SelectedDrink ~ drink", dr
                     }}
                    
                     className={`h-[30vh] ${wayBackVisible && !newestImageVisible ? "" : "hidden"}`}
-                    src={`
+                     src={`
                         https://web.archive.org/web/20210314010609/https://files.dutchbros.com/website/menu/drink-images/${drink.image}`} alt="" 
-                    />
+                    /> 
             
 
                     <img
