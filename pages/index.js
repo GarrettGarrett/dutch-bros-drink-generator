@@ -7,7 +7,7 @@ import SelectedDrink from '../components/SelectedDrink'
 import { useState, useEffect } from 'react'
 import Header from '../components/Header'
 
-function addBracketsIfNEeded(string, curentIndex, totalArrayLength){
+function addBracketsIfNEeded(string, currentIndex, totalArrayLength){
   if (string?.length > 1) {
       let firstChar  = string[0]
       let lastChar = string[string.length - 1]
@@ -16,13 +16,12 @@ function addBracketsIfNEeded(string, curentIndex, totalArrayLength){
       if (firstChar != "{") {
           editableString = "{" + editableString
       }
-      if (curentIndex == totalArrayLength - 1) {
+      if (currentIndex == totalArrayLength - 1) {
           editableString = editableString  + ':1' 
       }
       if (lastChar != "}") {
           editableString = editableString  + '}'
       }
-      
       return editableString
   }
  return string
@@ -58,7 +57,7 @@ export async function getServerSideProps(context) {
           objectArray.push(JSON.parse(formated))
       })
       return {
-        props: {objectArray}, // will be passed to the page component as props.
+        props: {objectArray}, 
       }
     }                  
 }
@@ -128,77 +127,68 @@ function randomIntFromInterval(min, max) { // min and max included
 
 return (
     <>
-    <div className='sticky top-0 z-50'>
-        <Header />
-    </div>
-
-      <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-           
- 
-            <div className='py-10'>
-
-
-
-              <div className=''>
-                <SelectedDrink 
-                  drink={randomResult}
-                  wayBackVisible={wayBackVisible}
-                  setWayBackVisible={setWayBackVisible}
-                  newestImageVisible={newestImageVisible}
-                  setNewestImageVisible={setNewestImageVisible}
-                  imageLoading={imageLoading}
-                  setImageLoading={setImageLoading}
-                />
-              </div>
-
-              <div className=''>
-                <RandomizeButton 
-                  randomize={randomize}
-                  setRandomize={setRandomize}
-                  setWayBackVisible={setWayBackVisible}
-                  setNewestImageVisible={setNewestImageVisible}
-                  setImageLoading={setImageLoading}
-                  selectedCategory={selectedCategory}
-                  buttonText={buttonText}
-                />
-              </div>
-              
-              {
-                cards.map( (card, index ) => {
-                  return (
-                    <CategoryCard
-                      index={index} 
-                      category={card.category}
-                      description={card.description}
-                      image={card.image}
-                      setSelectedCategory={setSelectedCategory}
-                      selectedCategory={selectedCategory}
-                    />
-                  )
-                })
-              }
-             
-            </div>
-          </div>
-
-          <div  class="-z-[1] absolute left-1 top-[60vh] h-5 w-5">
-              <img src="/images/windmill.png" alt=""/>
-          </div>
-          <div  class="-z-[1] absolute left-1 top-[80vh] h-5 w-5">
-              <img src="/images/bean.png" alt=""/>
-          </div>
-          <div  class="-z-[1] absolute right-1 top-[70vh] h-5 w-5">
-              <img src="/images/beans.png" alt=""/>
-          </div>
-          <div  class="-z-[1] absolute right-1 top-[90vh] h-5 w-5">
-              <img src="/images/windmill.png" alt=""/>
-          </div>
-
-
-
-
+      <div className='sticky top-0 z-50'>
+          <Header />
       </div>
+        <div className="relative max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+              <div className='py-10'>
+                <div className=''>
+                  <SelectedDrink 
+                    drink={randomResult}
+                    wayBackVisible={wayBackVisible}
+                    setWayBackVisible={setWayBackVisible}
+                    newestImageVisible={newestImageVisible}
+                    setNewestImageVisible={setNewestImageVisible}
+                    imageLoading={imageLoading}
+                    setImageLoading={setImageLoading}
+                  />
+                </div>
+
+                <div className=''>
+                  <RandomizeButton 
+                    randomize={randomize}
+                    setRandomize={setRandomize}
+                    setWayBackVisible={setWayBackVisible}
+                    setNewestImageVisible={setNewestImageVisible}
+                    setImageLoading={setImageLoading}
+                    selectedCategory={selectedCategory}
+                    buttonText={buttonText}
+                  />
+                </div>
+                
+                {
+                  cards.map( (card, index ) => {
+                    return (
+                      <CategoryCard
+                        index={index} 
+                        category={card.category}
+                        description={card.description}
+                        image={card.image}
+                        setSelectedCategory={setSelectedCategory}
+                        selectedCategory={selectedCategory}
+                      />
+                    )
+                  })
+                }
+              
+              </div>
+            </div>
+
+            {/* BG Icons */}
+            <div  class="-z-[1] absolute left-1 top-[60vh] h-5 w-5">
+                <img src="/images/windmill.png" alt=""/>
+            </div>
+            <div  class="-z-[1] absolute left-1 top-[80vh] h-5 w-5">
+                <img src="/images/bean.png" alt=""/>
+            </div>
+            <div  class="-z-[1] absolute right-1 top-[70vh] h-5 w-5">
+                <img src="/images/beans.png" alt=""/>
+            </div>
+            <div  class="-z-[1] absolute right-1 top-[90vh] h-5 w-5">
+                <img src="/images/windmill.png" alt=""/>
+            </div>
+        </div>
     </>
   )
 }
