@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import CategoryCard from '../components/CategoryCard'
 import RandomizeButton from '../components/RandomizeButton'
 import SelectedDrink from '../components/SelectedDrink'
@@ -26,7 +24,7 @@ function addBracketsIfNEeded(string, currentIndex, totalArrayLength) {
   return string
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   var myHeaders = new Headers()
   myHeaders.append('authority', 'www.dutchbros.com')
   myHeaders.append(
@@ -151,6 +149,7 @@ const cards = [
 ]
 
 const Home = ({ objectArray }) => {
+  console.log({objectArray})
   const [randomize, setRandomize] = useState(false)
   const [randomResult, setRandomResult] = useState(getRandomDrink(objectArray))
   const [wayBackVisible, setWayBackVisible] = useState(true)
