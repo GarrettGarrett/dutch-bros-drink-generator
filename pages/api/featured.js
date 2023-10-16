@@ -48,6 +48,7 @@ export default async function handler(req, res) {
       .json({ message: 'Internal server error', error, drinks: [] })
   }
 }
+// 
 
 function addBracketsIfNEeded(string, currentIndex, totalArrayLength) {
   if (string?.length > 1) {
