@@ -38,10 +38,11 @@ export default async function handler(req, res) {
           formatedJson.category == 'Featured Drinks' ||
           formatedJson.category == 'Seasonal Drinks'
         ) {
+
           // if category is Seasonal Drinks, make it Featured Drinks
           formatedJson.category = 'Featured Drinks'
 
-          objectArray.push(JSON.parse(formated))
+          objectArray.push(formatedJson)
         }
         // return if not in avoid categories
         // if (!avoidCategories.includes(formatedJson.category)) {
