@@ -70,6 +70,11 @@ export async function getServerSideProps() {
 
 const cards = [
   {
+    category: 'Seasonal Drinks',
+    description: 'Seasonal',
+    image: '/images/Featured.png',
+  },
+  {
     category: 'Featured Drinks',
     description: 'Featured',
     image: '/images/Featured.png',

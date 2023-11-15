@@ -30,14 +30,22 @@ export default async function handler(req, res) {
       var result = res_text.match(/({"name":(.*)"pdp")/gs)
       let splitArray = result[0].split('},{')
       let objectArray = []
+      // const avoidCategories = ["It's All Goodies", 'Featured Drinks']
       splitArray.forEach((arr, index) => {
         let formated = addBracketsIfNEeded(arr, index, splitArray.length)
         let formatedJson = JSON.parse(formated)
-        if (formatedJson.category == 'Featured Drinks') {
+        if (formatedJson.category == 'Featured Drinks' || formatedJson.category == 'Seasonal Drinks') {
           objectArray.push(JSON.parse(formated))
         }
+        // return if not in avoid categories
+        // if (!avoidCategories.includes(formatedJson.category)) {
+        //   objectArray.push(JSON.parse(formated))
+        // }
       })
-      return res.status(200).json({ drinks: objectArray })
+      objectArray = removeDuplicates(objectArray)
+      return res
+        .status(200)
+        .json({ drinks: objectArray, count: objectArray.length })
     } else {
       res.status(404).json({ error: 'No data found', drinks: [] })
     }
@@ -48,7 +56,7 @@ export default async function handler(req, res) {
       .json({ message: 'Internal server error', error, drinks: [] })
   }
 }
-// 
+//
 
 function addBracketsIfNEeded(string, currentIndex, totalArrayLength) {
   if (string?.length > 1) {
@@ -68,4 +76,29 @@ function addBracketsIfNEeded(string, currentIndex, totalArrayLength) {
     return editableString
   }
   return string
+}
+
+const removeDuplicates = (arr) => {
+  // {
+  //   "name": "Annihilator",
+  //   "slug": "annihilator",
+  //   "trademarked": true,
+  //   "available_sugar_free": false,
+  //   "description": "Chocolate Macadamia Nut Breve",
+  //   "long_description": "Feeling nutty? Maybe chocolatey? The Annihilator® breve perfectly blends strong espresso, half and half and chocolate macadamia nut syrup to satisfy your cravings.  Available hot, iced or blended!",
+  //   "image": "512px2/Iced_Annihilator_HERO.png",
+  //   "sort": 3,
+  //   "full_slug": "dutch-classics/annihilator",
+  //   "category": "Dutch Classics",
+  //   "pdp": 1
+  // },
+
+  // dont return the same name twice
+  const unique = arr
+    .map((e) => e.name)
+    .map((e, i, final) => final.indexOf(e) === i && i)
+    .filter((e) => arr[e])
+    .map((e) => arr[e])
+
+  return unique
 }
