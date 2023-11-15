@@ -34,7 +34,13 @@ export default async function handler(req, res) {
       splitArray.forEach((arr, index) => {
         let formated = addBracketsIfNEeded(arr, index, splitArray.length)
         let formatedJson = JSON.parse(formated)
-        if (formatedJson.category == 'Featured Drinks' || formatedJson.category == 'Seasonal Drinks') {
+        if (
+          formatedJson.category == 'Featured Drinks' ||
+          formatedJson.category == 'Seasonal Drinks'
+        ) {
+          // if category is Seasonal Drinks, make it Featured Drinks
+          formatedJson.category = 'Featured Drinks'
+
           objectArray.push(JSON.parse(formated))
         }
         // return if not in avoid categories
